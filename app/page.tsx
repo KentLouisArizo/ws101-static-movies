@@ -1,113 +1,170 @@
-import Image from "next/image";
+import Link from "next/link"
 
-export default function Home() {
+export default function Component() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <div className="min-h-screen bg-gray-900 text-white">
+      <header className="flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16 border-b border-gray-800">
+        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+          <MountainIcon className="w-6 h-6" />
+          <span className="text-lg font-bold">The Matrix</span>
+          <span className="text-lg font-bold">Icon</span>
+        </Link>
+      </header>
+      <section className="relative h-[80vh] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent" />
+        <img
+          src="https://www.indiewire.com/wp-content/uploads/2021/10/MSDMATR_EC061.jpg?w=3000&h=1687&crop=1&resize=1200%2C675"
+          alt="Movie Poster"
+          width={1920}
+          height={1080}
+          className="h-full w-full object-cover"
+          style={{ aspectRatio: "1920/1080", objectFit: "cover" }}
         />
-      </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="max-w-4xl px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl font-bold sm:text-6xl">The Matrix</h1>
+            <p className="mt-4 text-lg text-gray-400">
+              When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking
+              truth--the life he knows is the elaborate deception of an evil cyber- intelligence.
+            </p>
+            <a href="https://ww4.123moviesfree.net/movie/the-matrix-1967/">Watch Now!</a>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Movie Details</h2>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-gray-400">Director:</span>
+                <span>Lana Wachowski, Lilly Wachowski</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-400">Cast:</span>
+                <span>Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-400">Release Date:</span>
+                <span>March 31, 1999</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-400">Runtime:</span>
+                <span>136 minutes</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-400">Genre:</span>
+                <span>Action, Sci-Fi</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Synopsis</h2>
+            <p className="text-gray-400">
+              Neo, a computer programmer, is recruited by a group of rebels fighting a dystopian future in which
+              humanity is unknowingly trapped inside a simulated reality called the Matrix, created by sentient machines
+              to distract humans while using their bodies as an energy source. Neo must choose to either remain in the
+              blissful ignorance of the Matrix, or wake up and join the rebellion.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold mb-4">Related Movies</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <a href="terminator" >
+            <img
+              src="https://image.tmdb.org/t/p/original/kdYu7YJJP0uuGEuhUX5toqvBSog.jpg"
+              alt="Related Movie 1"
+              width={400}
+              height={600}
+              className="h-64 w-full object-cover"
+              style={{ aspectRatio: "400/600", objectFit: "cover" }}
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-bold">The Terminator</h3>
+              <p className="text-gray-400 mt-2">
+                A cyborg assassin is sent back in time to kill Sarah Connor, whose unborn son is destined to lead the
+                resistance against the machines.
+              </p>
+            </div>
+            </a>
+          </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <a href="inception">
+            <img
+              src="https://dreamstudies.org/wp-content/uploads/2010/07/inception-lucid-dreaming.jpg"
+              alt="Related Movie 2"
+              width={400}
+              height={600}
+              className="h-64 w-full object-cover"
+              style={{ aspectRatio: "400/600", objectFit: "cover" }}
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-bold">Inception</h3>
+              <p className="text-gray-400 mt-2">
+                A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse
+                task of planting an idea in the mind of a CEO.
+              </p>
+            </div>
+            </a>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <a href="blade">
+            <img
+              src="https://scifiinterfaces.com/wp-content/uploads/2020/06/BR-untitled.jpg"
+              alt="Related Movie 3"
+              width={400}
+              height={600}
+              className="h-64 w-full object-cover"
+              style={{ aspectRatio: "400/600", objectFit: "cover" }}
+            />
+            <div className="p-4">
+              <h3 className="text-xl font-bold">Blade Runner</h3>
+              <p className="text-gray-400 mt-2">
+                A blade runner must pursue and try to terminate four replicants who stole a ship in space and have
+                returned to Earth to find their creator.
+              </p>
+            </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <footer className="bg-gray-800 py-6 px-4 sm:px-6 lg:px-8 mt-8">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
+          <p className="text-gray-400 text-sm">&copy; 2024 The Matrix. All rights reserved.</p>
+          <nav className="flex items-center gap-4">
+            <Link href="#" className="text-gray-400 hover:text-white text-sm" prefetch={false}>
+              Terms of Service
+            </Link>
+            <Link href="#" className="text-gray-400 hover:text-white text-sm" prefetch={false}>
+              Privacy Policy
+            </Link>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  )
+}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+function MountainIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+    </svg>
+  )
 }
