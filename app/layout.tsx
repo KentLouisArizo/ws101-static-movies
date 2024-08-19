@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
-import { cn } from '../lib/utils';
+import { cn } from '../lib/utils'
 import './globals.css'
+import { ReactNode } from 'react'
 
 const fontHeading = Inter({
   subsets: ['latin'],
@@ -14,7 +15,11 @@ const fontBody = Inter({
   variable: '--font-body',
 })
 
-export default function Layout({ children }) {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body 
