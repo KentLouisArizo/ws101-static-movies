@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { SVGProps } from 'react';
 
 export default function Component() {
   return (
@@ -151,7 +152,7 @@ export default function Component() {
   )
 }
 
-function MountainIcon(props) {
+function MountainIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -167,5 +168,5 @@ function MountainIcon(props) {
     >
       <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
     </svg>
-  )
+  );
 }
